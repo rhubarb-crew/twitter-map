@@ -35,7 +35,7 @@
 
     Mapbox will take you to its style editor where you can modify any part of the map styles.
 
-4. Create an env.js file in root folder and add the following code with your own Twitter & Mapbox access tokens:
+4. Wherever you cloned your files to - create an env.js file in the root folder and add the following code with your own Twitter & Mapbox access tokens:
 
     ```javascript
     process.env['TWITTER_CONSUMER_KEY'] = "<YOUR CONSUMER KEY>";
