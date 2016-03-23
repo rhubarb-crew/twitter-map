@@ -23,10 +23,76 @@ function createMapboxGLMap(id, center) {
   
   var map = new mapboxgl.Map({
     container: id, // container id
-    style: MAPBOX_STYLE_ID, //hosted style id
+    style: MAPBOX_STYLE_ID, //hosted style i
     center: center, // starting position
     zoom: 12 // starting zoom
-});
+  });
+  
+  // Add markers, reference: https://www.mapbox.com/maki/
+  // Note: coordinates are [longitude, latitude]
+  map.on('style.load', function () {
+    //console.log(tweetsRaw);
+    
+    /* Features example:
+      {
+        "type": "Feature",
+        "geometry": {
+          "type": "Point",
+          "coordinates": [-118.243685, 34.052234]
+        },
+        "properties": {
+          "title": "DTLA",
+          "marker-symbol": "marker"
+        }
+      }
+    */
+    
+    
+    var geojsonMarkers = {
+      "type": "geojson",
+      "data": {
+        "type": "FeatureCollection",
+        "features": [
+        ]
+      }
+    };
+    
+    if (tweetsRaw.statuses.length > 0) {
+      tweetsRaw.statuses.forEach(function (tweet) {
+        if (tweet.coordinates != null) {
+          geojsonMarkers.data.features.push({
+            "type": "Feature",
+            "geometry": {
+              "type": "Point",
+              "coordinates": tweet.coordinates.coordinates
+            },
+            "properties": {
+              "title": tweet.user.screen_name,
+              "marker-symbol": "marker"
+            }
+          });
+        }
+      });
+    }
+    
+    
+    map.addSource("markers", geojsonMarkers);
+
+    map.addLayer({
+        "id": "markers",
+        "type": "symbol",
+        "source": "markers",
+        "layout": {
+            "icon-image": "{marker-symbol}-15",
+            "text-field": "{title}",
+            "text-font": ["Open Sans Semibold", "Arial Unicode MS Bold"],
+            "text-offset": [0, 0.6],
+            "text-anchor": "top"
+        }
+    });
+  });
+  
+  
 }
 
 // Source options: 'OSM' or 'Mapbox'

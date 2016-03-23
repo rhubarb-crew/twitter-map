@@ -14,6 +14,7 @@ html
       var MAPBOX_ACCESS_TOKEN = "#{mapbox_token}";
       var MAPBOX_MAP_ID = "#{mapbox_map_id}";
       var MAPBOX_STYLE_ID = "#{mapbox_style_id}";
+      var tweetsRaw = !{JSON.stringify(tweetsRaw)};
     script(src='/javascripts/map.js')
   body
     block content

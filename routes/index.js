@@ -18,7 +18,7 @@ var twitterClient = new Twitter({
 router.get('/', function(req, res, next) {
     var tweets = '';
     var params = {
-        q: '#dtla',
+        q: '#dtla filter:media',
         geocode: '34.052234,-118.243685,2mi',
         include_entities: 'true'
     };
@@ -29,6 +29,7 @@ router.get('/', function(req, res, next) {
                 title: 'Twitter Map', 
                 params: params, 
                 tweets: listTweets(tweets),
+                tweetsRaw: tweets,
                 mapbox_token: process.env.MAPBOX_ACCESS_TOKEN,
                 mapbox_map_id: process.env.MAPBOX_MAP_ID,
                 mapbox_style_id: process.env.MAPBOX_STYLE_ID
@@ -49,14 +50,21 @@ var listTweets = function (tweets) {
     if (tweets.statuses.length > 0) {
         tweets.statuses.forEach(function (tweet) {
             messages += '<div class="tweet">';
+            messages += '<h3>' + tweet.user.screen_name + '</h3>';
+            messages += '<div>' + tweet.created_at + '</div>';
+            
             if (tweet.geo != null) {
+                // Twitter provides coordinates in two formats:
+                // tweet.geo.coordinates: [latitude, longitude]
+                // tweet.coordinates.coordinates: [longitude, latitude]
                 messages += 'Coordinates: ' + tweet.geo.coordinates + '<br />';
             }
             
             if (tweet.entities.media != undefined) {
                 messages += '<img src="' + tweet.entities.media[0].media_url_https + ':small" /><br />';
             }
-            messages += tweet.text + '</div>';
+            messages += tweet.text;
+            messages += '<div style="clear: both;"></div></div>';
         });
     }
     
