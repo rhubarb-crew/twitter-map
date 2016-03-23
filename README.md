@@ -2,7 +2,20 @@
 
 ## Instructions
 
-1. Fork and clone this repository.  You can create a Cloud9 account and run this code on a virtual server!  Fork this repository to your own GitHub account.  Create a Cloud9 account and connect your GitHub account.  From your Cloud9 dashboard, click "Create a new workspace".  Give the project a name and paste the SSH key and passphrase from your forked repository.  Select the "Custom" template and create your workspace.
+1. Fork and clone this repository.  You can create a Cloud9 account and run this code on a virtual server!
+    * Create a Cloud9 account and connect your GitHub account.
+    * From your Cloud9 dashboard, click "Create a new workspace".
+    * Give the project a name and paste the SSH key and passphrase from your forked repository.
+    * Select the "Custom" template and create your workspace.
+2. Use your Twitter account to create a Twitter app for developer access to the Twitter APIs.
+    * Log into your Twitter account and go to https://apps.twitter.com/
+    * Click the "Create New App" button.
+    * Give your app a Name (must be unique), Description, and Website (can be just a placeholder).  Agree to the terms and click the button to create your app.
+    * Now that your app has been created, go to the "Keys and Access Tokens" tab.  Note that your Consumer Key and Consumer Secret already exist.
+    * Scroll down to the Your Access Token section and click the "Create my access token" button.  Now you will have an Access Token and an Access Token Secret.
+3. Create a Mapbox account - on the Home page you will have an automatically generated default access token.
+    * Go to your Styles tab to view your Tilesets tab to view your tilesets.  Mapbox gives you 3 default tilesets.  Click the button on the right side to get their Map IDs.
+    * You can use Mapbox Studio to style your own Tilesets, upload them to your Mapbox account, and then access them in your maps!
 2. Create an env.js file in root folder and add the following code with your own Twitter & Mapbox access tokens:
 
 ```javascript
