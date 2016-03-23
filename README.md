@@ -2,8 +2,8 @@
 
 ## Instructions
 
-1. Clone repository (use Cloud9!)
-2. Create env.js file in root folder and add the following code with your own Twitter & Mapbox access tokens:
+1. Fork and clone this repository.  You can create a Cloud9 account and run this code on a virtual server!  Fork this repository to your own GitHub account.  Create a Cloud9 account and connect your GitHub account.  From your Cloud9 dashboard, click "Create a new workspace".  Give the project a name and paste the SSH key and passphrase from your forked repository.  Select the "Custom" template and create your workspace.
+2. Create an env.js file in root folder and add the following code with your own Twitter & Mapbox access tokens:
 
 ```javascript
 process.env['TWITTER_CONSUMER_KEY'] = "<YOUR CONSUMER KEY>";
