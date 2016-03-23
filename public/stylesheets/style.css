@@ -6,3 +6,9 @@ body {
 a {
   color: #00B7FF;
 }
+
+.tweet {
+  margin: 20px 0px;
+  padding: 20px;
+  border: solid 1px #dddddd;
+}

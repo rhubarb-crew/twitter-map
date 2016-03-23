@@ -4,23 +4,11 @@ var favicon = require('serve-favicon');
 var logger = require('morgan');
 var cookieParser = require('cookie-parser');
 var bodyParser = require('body-parser');
-var Twitter = require('twitter');
 
 var routes = require('./routes/index');
 var users = require('./routes/users');
 
-// Require & run the code in env.js so they can be accessed via process.env.*
-require('./env.js');
-
 var app = express();
-
-// Set up Twitter Client
-var twitterClient = new Twitter({
-  consumer_key: process.env.CONSUMER_KEY,
-  consumer_secret: process.env.CONSUMER_SECRET,
-  access_token_key: process.env.ACCESS_TOKEN_KEY,
-  access_token_secret: process.env.ACCESS_TOKEN_SECRET
-});
 
 // view engine setup
 app.set('views', path.join(__dirname, 'views'));
