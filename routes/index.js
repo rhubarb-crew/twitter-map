@@ -30,7 +30,8 @@ router.get('/', function(req, res, next) {
                 params: params, 
                 tweets: listTweets(tweets),
                 mapbox_token: process.env.MAPBOX_ACCESS_TOKEN,
-                mapbox_id: process.env.MAPBOX_MAP_ID
+                mapbox_map_id: process.env.MAPBOX_MAP_ID,
+                mapbox_style_id: process.env.MAPBOX_STYLE_ID
             });
         } else {
             res.render('index', { 

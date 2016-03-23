@@ -15,7 +15,9 @@
     * Scroll down to the Your Access Token section and click the "Create my access token" button.  Now you will have an Access Token and an Access Token Secret.
 3. Create a Mapbox account - on the Home page you will have an automatically generated default access token.
     * Go to your Styles tab to view your Tilesets tab to view your tilesets.  Mapbox gives you 3 default tilesets.  Click the button on the right side to get their Map IDs.
-    * You can use Mapbox Studio to style your own Tilesets, upload them to your Mapbox account, and then access them in your maps!
+    * You can use Mapbox to style your own Tilesets, upload them to your Mapbox account, and then access them in your maps!
+    * To get started - Go to the Style tab and create a new style using one of Mapbox's starting templates.
+    * Mapbox will take you to its style editor where you can modify any part of the map styles.
 2. Create an env.js file in root folder and add the following code with your own Twitter & Mapbox access tokens:
 
 ```javascript
