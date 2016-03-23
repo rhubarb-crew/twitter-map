@@ -9,6 +9,9 @@ var Twitter = require('twitter');
 var routes = require('./routes/index');
 var users = require('./routes/users');
 
+// Require & run the code in env.js so they can be accessed via process.env.*
+require('./env.js');
+
 var app = express();
 
 // Set up Twitter Client
