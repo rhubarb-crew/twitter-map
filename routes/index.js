@@ -7,10 +7,10 @@ require('../env.js');
 
 // Set up Twitter Client
 var twitterClient = new Twitter({
-  consumer_key: process.env.CONSUMER_KEY,
-  consumer_secret: process.env.CONSUMER_SECRET,
-  access_token_key: process.env.ACCESS_TOKEN_KEY,
-  access_token_secret: process.env.ACCESS_TOKEN_SECRET
+  consumer_key: process.env.TWITTER_CONSUMER_KEY,
+  consumer_secret: process.env.TWITTER_CONSUMER_SECRET,
+  access_token_key: process.env.TWITTER_ACCESS_TOKEN_KEY,
+  access_token_secret: process.env.TWITTER_ACCESS_TOKEN_SECRET
 });
 
 
@@ -28,7 +28,9 @@ router.get('/', function(req, res, next) {
             res.render('index', { 
                 title: 'Twitter Map', 
                 params: params, 
-                tweets: listTweets(tweets) 
+                tweets: listTweets(tweets),
+                mapbox_token: process.env.MAPBOX_ACCESS_TOKEN,
+                mapbox_id: process.env.MAPBOX_MAP_ID
             });
         } else {
             res.render('index', { 

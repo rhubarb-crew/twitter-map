@@ -2,10 +2,14 @@ extends layout
 
 block content
   h1= title
-  h2 Search Query
+  h2 Twitter Search Query
   div <strong>q:</strong> #{params.q}
   div <strong>geocode:</strong> #{params.geocode}
   
-  h2 Results
+  h2 Twitter Search Results
   div
     != tweets
+
+  h2 Map
+  div(id='twitterMap')
+  
