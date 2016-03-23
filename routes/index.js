@@ -25,9 +25,16 @@ router.get('/', function(req, res, next) {
     
     twitterClient.get('search/tweets', params, function(error, tweets, response){
         if (!error) {
-            res.render('index', { title: 'Twitter Map', tweets: listTweets(tweets) });
+            res.render('index', { 
+                title: 'Twitter Map', 
+                params: params, 
+                tweets: listTweets(tweets) 
+            });
         } else {
-            res.render('index', { title: 'Twitter Map', tweets: error });
+            res.render('index', { 
+                title: 'Twitter Map', 
+                tweets: error 
+            });
         }
     });
   
