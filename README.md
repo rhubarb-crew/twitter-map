@@ -44,6 +44,7 @@
     process.env['TWITTER_ACCESS_TOKEN_SECRET'] = "<YOUR ACCESS TOKEN SECRET>";
     process.env['MAPBOX_ACCESS_TOKEN'] = "<YOUR ACCESS TOKEN>";
     process.env['MAPBOX_MAP_ID'] = "<YOUR MAP ID>";
+    process.env['MAPBOX_STYLE_ID'] = "<YOUR STYLE ID>";
     ```
 
 5. Run the npm install command in the bash console:
