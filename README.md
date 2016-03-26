@@ -1,8 +1,36 @@
-# node-twitter-test
+# twitter-map
+
+This project was made for the __Civic Hack Hours__ held by [Hack For LA](http://www.hackforla.org/) and [Hacker Fund](https://hacker.fund/).  Civic Hack Hours are a weekly session held in downtown Los Angeles aimed at teaching high school students how to code and how to think about civic issues.  Our goal is to empower the students to actively improve their communities through civic hacking.
+
+
+## Learning Goals
+
+* How to access [Twitter's REST API](https://dev.twitter.com/rest/public)
+* How to display Twitter's JSON data as content on a webpage as well as markers on a webmap.
+* How to use [Mapbox Studio](https://www.mapbox.com/studio/) to create map styles.
+* How to embed a webmap into a webpage and have it use the custom styles we created.
+
+
+## Frameworks/Libraries/Modules Used
+
+* [Node](https://nodejs.org/) - because the Twitter API uses OAuth authentication, which needs to be done server-side.
+* [Express](http://expressjs.com/) - because it's easier to use an established framework than come up with your own confusing mess.
+* [Jade](http://jade-lang.com/) - because it's the default templating language installed by Express.
+* [Mapbox-GL](https://www.mapbox.com/mapbox-gl-js/api/) - because this will build our webmap with our own custom Mapbox styles.
+* _[Leaflet.js](http://leafletjs.com/)_ - technically we're using Mapbox-GL instead of Leaflet, but some of the code for Leaflet is still there (just commented out).  Leaflet pulls Mapbox tilesets and I switched to Mapbox-GL to use Mapbox styles instead.
+
+
+## Accounts Needed
+
+* [GitHub](http://github.com/)
+* [Cloud9](http://c9.io/)
+* [Twitter](http://twitter.com)
+* [Mapbox](http://mapbox.com)
+
 
 ## Instructions
 
-1. Fork and clone this repository.  You can create a Cloud9 account and run this code on a virtual server!
+1. Fork and clone this repository - you can create a Cloud9 account and run this code on a virtual server!
 
     Create a Cloud9 account and connect your GitHub account.
 
@@ -44,6 +72,7 @@
     process.env['TWITTER_ACCESS_TOKEN_SECRET'] = "<YOUR ACCESS TOKEN SECRET>";
     process.env['MAPBOX_ACCESS_TOKEN'] = "<YOUR ACCESS TOKEN>";
     process.env['MAPBOX_MAP_ID'] = "<YOUR MAP ID>";
+    process.env['MAPBOX_STYLE_ID'] = "<YOUR STYLE ID>";
     ```
 
 5. Run the npm install command in the bash console:
